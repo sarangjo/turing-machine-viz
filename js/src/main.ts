@@ -1,14 +1,11 @@
 import * as THREE from "three";
 import { TrackballControls } from "three/addons/controls/TrackballControls.js";
-
-import { drawCube } from "./draw.js";
+import { draw } from "./draw";
 
 let scene: THREE.Scene,
   camera: THREE.PerspectiveCamera,
   renderer: THREE.WebGLRenderer,
   controls: TrackballControls;
-
-init();
 
 function init() {
   const aspect = window.innerWidth / window.innerHeight;
@@ -61,8 +58,9 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-function draw() {
-  drawCube(scene);
+function main() {
+  init();
+  draw(scene);
 }
 
-draw();
+main();
